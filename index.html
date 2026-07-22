@@ -4,38 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather APP</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="./output.css">
     <link rel="icon"
         href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8vVehgg2YbIu7pOUYCw3DeSSVjREPdJ4lXQb5lC4Ow&s=10">
 </head>
 
-<body class="min-h-screen bg-linear-to-br from-blue-400 via-sky-300 to-cyan-200 flex justify-center items-center p-4">
+<body class="min-h-screen bg-[#060708] text-zinc-100">
+    <main class="flex min-h-screen items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+        <section
+            class="w-full max-w-2xl rounded-[32px] border border-zinc-800/80 bg-[#111315] p-6 shadow-[0_25px_80px_rgba(0,0,0,0.45)] sm:p-8 lg:p-10">
+            <div class="flex flex-col gap-8">
+                <header class="space-y-3 text-center sm:text-left">
+                    <p class="text-sm font-medium uppercase tracking-[0.35em] text-cyan-400">Weather Dashboard</p>
+                    <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Real-time Weather Insights
+                    </h1>
+                    <p class="text-base leading-7 text-zinc-400 sm:text-lg">Check current conditions with a calm,
+                        polished interface designed for everyday planning.</p>
+                </header>
 
-    <div class="w-full max-w-md bg-white/40 backdrop-blur-lg shadow-2xl rounded-2xl p-6 border border-white/40">
+                <div
+                    class="flex flex-col gap-3 rounded-[24px] border border-zinc-800 bg-[#0b0d0f] p-3 sm:flex-row sm:items-center sm:gap-3">
+                    <label for="city-name" class="sr-only">Enter city name</label>
+                    <input type="text" placeholder="Search for a city" id="city-name" autocomplete="off"
+                        class="h-12 w-full rounded-[18px] border border-zinc-700 bg-[#15171a] px-4 text-base text-zinc-100 placeholder:text-zinc-500 outline-none transition duration-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20">
 
-        <h1 class="text-3xl font-bold text-center drop-shadow-md mb-6">
-            🌤️Weather Application
-        </h1>
+                    <button type="button"
+                        class="inline-flex h-12 min-w-[170px] items-center justify-center rounded-[18px] bg-cyan-500 px-4 text-sm font-semibold text-[#031014] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-400 active:scale-[0.98]"
+                        id="search">
+                        Check Weather
+                    </button>
+                </div>
 
-        <div class="flex flex-col gap-4">
-            <input type="text" placeholder="Enter City" id="city-name"
-                class="w-full px-4 py-3 rounded-xl outline-none border-2 border-white/60 text-gray-800 placeholder:gray-400 focus:ring-2 focus:ring-blue-500">
-
-            <button
-                class="bg-blue-600 hover:bg-blue-800 text-white font-semibold py-3 rounded-xl transition-all duration-500"
-                id="search">
-                Search Weather Details
-            </button>
-        </div>
-
-
-        <div id="result" class="mt-6 hidden bg-white/40 rounded-2xl p-5">
-
-        </div>
-
-    </div>
-
+                <div id="result" class="hidden rounded-[28px] border border-zinc-800 bg-[#0d0f11] p-4 sm:p-6"
+                    aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
 
     <script src="./weather.js"></script>
 </body>
